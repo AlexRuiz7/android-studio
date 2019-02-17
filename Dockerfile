@@ -9,7 +9,6 @@ locales \
 usbutils \
 unzip \
 wget \
-qemu-kvm \
 lib32stdc++6
 
 # SELECTION DE LA LANGUE FRANCAISE
