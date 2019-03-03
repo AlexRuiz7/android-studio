@@ -12,7 +12,7 @@
 - [License](#LICENSE)
 
 
-## Badges
+## BADGES
 
 [![version](https://images.microbadger.com/badges/version/alexandreoda/android-studio.svg)](https://microbadger.com/images/alexandreoda/android-studio)
 [![size](https://images.microbadger.com/badges/image/alexandreoda/android-studio.svg)](https://microbadger.com/images/alexandreoda/android-studio")
