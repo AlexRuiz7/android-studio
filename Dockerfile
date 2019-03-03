@@ -14,13 +14,13 @@ locales \
 usbutils \
 unzip \
 wget \
-lib32stdc++6
+lib32stdc++6 && \
 
 # SELECTION DE LA LANGUE FRANCAISE
-RUN echo ${LANG} > /etc/locale.gen && locale-gen
+echo ${LANG} > /etc/locale.gen && locale-gen && \
 
 # AJOUT UTILISATEUR
-RUN useradd -d /home/${USER} -m ${USER} && \
+useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \
 adduser ${USER} sudo
 
@@ -33,10 +33,10 @@ WORKDIR /home/${USER}
 # INSTALLATION DE L'APPLICATION
 RUN wget https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-182.5264788-linux.zip && \
 unzip android-studio-*-linux.zip && \
-rm -rf android-studio-*-linux.zip
+rm -rf android-studio-*-linux.zip && \
 
 # NETTOYAGE
-RUN sudo apt-get --purge autoremove -y \
+sudo apt-get --purge autoremove -y \
 wget \
 unzip && \
 sudo apt-get autoclean -y && \
