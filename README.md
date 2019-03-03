@@ -17,7 +17,7 @@
 [![version](https://images.microbadger.com/badges/version/alexandreoda/android-studio.svg)](https://microbadger.com/images/alexandreoda/android-studio)
 [![size](https://images.microbadger.com/badges/image/alexandreoda/android-studio.svg)](https://microbadger.com/images/alexandreoda/android-studio")
 [![build](https://img.shields.io/docker/build/alexandreoda/android-studio.svg)](https://hub.docker.com/r/alexandreoda/android-studio)
-[![build](https://img.shields.io/docker/automated/alexandreoda/android-studio.svg)](https://hub.docker.com/r/alexandreoda/android-studio)
+[![automated](https://img.shields.io/docker/automated/alexandreoda/android-studio.svg)](https://hub.docker.com/r/alexandreoda/android-studio)
 
 ## INTRODUCTION
 
