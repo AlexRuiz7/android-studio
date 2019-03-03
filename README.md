@@ -21,7 +21,11 @@
 
 ## INTRODUCTION
 
-Ce repository contient le fichier Dockerfile de [android-studio](https://developer.android.com/studio) pour [docker](https://www.docker.com), mis à jour automatiquement dans le [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/).
+Ce repository contient le fichier Dockerfile de
+
+- [android-studio](https://developer.android.com/studio)
+
+Mis à jour automatiquement dans le [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/).
 
 
 ## PREREQUIS
