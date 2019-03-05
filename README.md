@@ -39,7 +39,8 @@ Installer [docker](https://www.docker.com)
 ## INSTALLATION
 
 ```
-docker run -d --name android-studio -v ${HOME}:/home/android -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb --privileged -e DISPLAY alexandreoda/android-studio
+┌─[oda@GWYNITH]─[~]
+└──╼ $ docker run -d --name android-studio -v ${HOME}:/home/android -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb --privileged -e DISPLAY alexandreoda/android-studio
 ```
 
 
