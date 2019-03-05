@@ -3,9 +3,9 @@ FROM openjdk:8-jdk
 MAINTAINER https://oda-alexandre.com
 
 # VARIABLES
-ENV USER android \
-LANG fr_FR.UTF-8 \
-VERSION 3.3.1.0
+ENV USER android
+ENV LANG fr_FR.UTF-8
+ENV VERSION 3.3.1.0
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install -y --no-install-recommends \
