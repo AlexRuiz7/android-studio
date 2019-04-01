@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk
 
-MAINTAINER https://oda-alexandre.com
+MAINTAINER http://www.oda-alexandre.com/
 
 # VARIABLES
 ENV USER android
