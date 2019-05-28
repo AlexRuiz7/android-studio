@@ -2,8 +2,6 @@
 
 <img src="https://s14-eu5.startpage.com/wikioimage/fb879d295824b1c73d3d2181e4df5c5c.png"/>
 
-[![dockeri.co](https://dockeri.co/image/alexandreoda/android-studio)](https://hub.docker.com/r/alexandreoda/android-studio)
-
 
 ## INDEX
 
