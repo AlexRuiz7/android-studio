@@ -5,7 +5,8 @@ MAINTAINER https://www.oda-alexandre.com/
 # VARIABLES
 ENV USER android
 ENV LANG fr_FR.UTF-8
-ENV VERSION 3.3.1.0
+ENV VERSION 3.4.1.0
+ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install -y --no-install-recommends \
