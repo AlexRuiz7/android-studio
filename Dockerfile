@@ -11,13 +11,12 @@ ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-stud
 # INSTALLATION DES PREREQUIS
 RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
-locales \
 usbutils \
 wget \
+libxext6 \
+libxrender1 \
+libxtst6 \
 lib32stdc++6 && \
-
-# SELECTION DE LA LANGUE FRANCAISE
-echo ${LANG} > /etc/locale.gen && locale-gen && \
 
 # AJOUT UTILISATEUR
 useradd -d /home/${USER} -m ${USER} && \
