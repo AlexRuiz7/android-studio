@@ -13,7 +13,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 locales \
 usbutils \
-unzip \
 wget \
 lib32stdc++6 && \
 
@@ -32,14 +31,14 @@ USER ${USER}
 WORKDIR /home/${USER}
 
 # INSTALLATION DE L'APPLICATION
-RUN wget https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-182.5264788-linux.zip && \
-unzip android-studio-*-linux.zip && \
-rm -rf android-studio-*-linux.zip && \
+ADD ${APP} /home/${USER}/android-studio.tar.gz
+
+RUN sudo tar zxvf android-studio.tar.gz && \
+rm -rf android-studio.tar.gz && \
 
 # NETTOYAGE
 sudo apt-get --purge autoremove -y \
-wget \
-unzip && \
+wget && \
 sudo apt-get autoclean -y && \
 sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
