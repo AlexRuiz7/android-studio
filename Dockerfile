@@ -1,5 +1,7 @@
+# IMAGE TO USE
 FROM openjdk:8-jdk
 
+# MAINTAINER
 MAINTAINER https://www.oda-alexandre.com/
 
 # VARIABLES
@@ -8,7 +10,7 @@ ENV LANG fr_FR.UTF-8
 ENV VERSION 3.4.1.0
 ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
-# INSTALLATION DES PREREQUIS
+# INSTALL OF PACKAGES
 RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 usbutils \
@@ -18,24 +20,24 @@ libxrender1 \
 libxtst6 \
 lib32stdc++6 && \
 
-# AJOUT UTILISATEUR
+# ADD USER
 useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \
 adduser ${USER} sudo
 
-# SELECTION UTILISATEUR
+# SELECT USER
 USER ${USER}
 
-# SELECTION ESPACE DE TRAVAIL
+# SELECT WORKING SPACE
 WORKDIR /home/${USER}
 
-# INSTALLATION DE L'APPLICATION
+# INSTALL APP
 ADD ${APP} /home/${USER}/android-studio.tar.gz
 
 RUN sudo tar zxvf android-studio.tar.gz && \
 rm -rf android-studio.tar.gz && \
 
-# NETTOYAGE
+# CLEANING
 sudo apt-get --purge autoremove -y \
 wget && \
 sudo apt-get autoclean -y && \
@@ -43,8 +45,8 @@ sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
 sudo rm -rf /var/lib/apt/lists/*
 
-# SELECTION ESPACE DE TRAVAIL
+# SELECT WORKING SPACE
 WORKDIR /home/${USER}/android-studio/bin
 
-# COMMANDE AU DEMARRAGE DU CONTENEUR
+# START THE CONTAINER
 CMD ./studio.sh
