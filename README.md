@@ -29,7 +29,7 @@ Continuous integration on :
 
 automatically updated on :
 
-- [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/).
+- [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/)
 
 
 ## PREREQUISITES
