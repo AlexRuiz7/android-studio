@@ -10,7 +10,7 @@ ENV LANG fr_FR.UTF-8
 ENV VERSION 3.4.1.0
 ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
-# INSTALL OF PACKAGES
+# INSTALL PACKAGES
 RUN apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 usbutils \
@@ -49,4 +49,4 @@ sudo rm -rf /var/lib/apt/lists/*
 WORKDIR /home/${USER}/android-studio/bin
 
 # START THE CONTAINER
-CMD ./studio.sh
+CMD ./studio.sh \
