@@ -1,43 +1,40 @@
-# IMAGE TO USE
 FROM openjdk:8-jdk
 
-# MAINTAINER
 MAINTAINER https://www.oda-alexandre.com/
 
-# VARIABLES
 ENV USER android
 ENV LANG fr_FR.UTF-8
 ENV VERSION 3.4.1.0
 ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
-# INSTALL PACKAGES
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
+apt-get update && apt-get install -y --no-install-recommends \
 sudo \
 usbutils \
 wget \
 libxext6 \
 libxrender1 \
 libxtst6 \
-lib32stdc++6 && \
+lib32stdc++6
 
-# ADD USER
+RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
 useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \
 adduser ${USER} sudo
 
-# SELECT USER
+RUN echo -e '\033[36;1m ******* SELECT USER ******** \033[0m'
 USER ${USER}
 
-# SELECT WORKING SPACE
+RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
 WORKDIR /home/${USER}
 
-# INSTALL APP
+RUN echo -e '\033[36;1m ******* INSTALL APP ******** \033[0m'
 ADD ${APP} /home/${USER}/android-studio.tar.gz
 
 RUN sudo tar zxvf android-studio.tar.gz && \
-rm -rf android-studio.tar.gz && \
+rm -rf android-studio.tar.gz
 
-# CLEANING
+RUN echo -e '\033[36;1m ******* CLEANING ******** \033[0m' && \
 sudo apt-get --purge autoremove -y \
 wget && \
 sudo apt-get autoclean -y && \
@@ -45,8 +42,8 @@ sudo rm /etc/apt/sources.list && \
 sudo rm -rf /var/cache/apt/archives/* && \
 sudo rm -rf /var/lib/apt/lists/*
 
-# SELECT WORKING SPACE
+RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
 WORKDIR /home/${USER}/android-studio/bin
 
-# START THE CONTAINER
+RUN echo -e '\033[36;1m ******* CONTAINER START COMMAND ******** \033[0m'
 CMD ./studio.sh \
