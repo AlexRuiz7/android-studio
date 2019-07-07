@@ -17,7 +17,6 @@ libxrender1 \
 libxtst6 \
 lib32stdc++6
 
-
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
 useradd -d /home/${USER} -m ${USER} && \
 passwd -d ${USER} && \

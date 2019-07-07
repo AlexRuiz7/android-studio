@@ -111,4 +111,4 @@ test:
     - docker pull $CI_REGISTRY_IMAGE
     - docker run --rm -d $CI_REGISTRY_IMAGE
   only:
-    - master
+    - dev
