@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk
 
-MAINTAINER https://www.oda-alexandre.com/
+LABEL authors="https://www.oda-alexandre.com/"
 
 ENV USER android
 ENV LANG fr_FR.UTF-8
