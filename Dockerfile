@@ -8,7 +8,7 @@ ENV VERSION 3.4.1.0
 ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
 RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
-apt-get update && apt-get install -y --no-install-recommends \
+apt update && apt install -y --no-install-recommends \
 sudo \
 usbutils \
 wget \
