@@ -35,7 +35,7 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
-```docker run -d --rm --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --privileged --network host alexandreoda/android-studio```
+```docker run -d --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --privileged --network host alexandreoda/android-studio```
 
 ## LICENSE
 
