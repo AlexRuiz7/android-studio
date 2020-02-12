@@ -1,6 +1,6 @@
 # ANDROID STUDIO
 
-<img src="https://s14-eu5.startpage.com/wikioimage/fb879d295824b1c73d3d2181e4df5c5c.png" width="200" height="200"/>
+<img src="https://assets.gitlab-static.net/uploads/-/system/project/avatar/12904438/Android-Studio-3.3-1.png" width="200" height="200"/>
 
 ## INDEX
 
