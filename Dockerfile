@@ -4,23 +4,18 @@ LABEL authors https://www.oda-alexandre.com
 
 ENV USER android
 ENV HOME /home/${USER}
-ENV LOCALES fr_FR.UTF-8
 ENV VERSION 3.4.1.0
 ENV APP https://dl.google.com/dl/android/studio/ide-zips/${VERSION}/android-studio-ide-183.5522156-linux.tar.gz
 
 RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
   apt update && apt install -y --no-install-recommends \
   sudo \
-  locales \
   usbutils \
   wget \
   libxext6 \
   libxrender1 \
   libxtst6 \
   lib32stdc++6
-
-RUN echo -e '\033[36;1m ******* CHANGE LOCALES ******** \033[0m' && \
-  locale-gen ${LOCALES}
 
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
   useradd -d ${HOME} -m ${USER} && \
