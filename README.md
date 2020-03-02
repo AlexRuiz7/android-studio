@@ -6,14 +6,22 @@
 
   - [INDEX](#index)
   - [BADGES](#badges)
+  - [FIRST UPDATE](#first-update)
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
   - [LICENSE](#license)
 
+
 ## BADGES
 
 [![pipeline status](https://gitlab.com/oda-alexandre/android-studio/badges/master/pipeline.svg)](https://gitlab.com/oda-alexandre/android-studio/commits/master)
+
+
+## FIRST UPDATE
+
+Date: 01-01-01
+
 
 ## INTRODUCTION
 
@@ -29,13 +37,16 @@ Automatically updated on :
 
 - [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/)
 
+
 ## PREREQUISITES
 
 Use [docker](https://www.docker.com)
 
+
 ## INSTALL
 
 ```docker run -d --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --privileged --network host alexandreoda/android-studio```
+
 
 ## LICENSE
 
