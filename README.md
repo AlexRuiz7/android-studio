@@ -10,6 +10,7 @@
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [INSTALL](#install)
+    - [DOCKER RUN](#docker-run)
   - [LICENSE](#license)
 
 ## BADGES
@@ -36,7 +37,28 @@ Use [docker](https://www.docker.com)
 
 ## INSTALL
 
-```docker run -d --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --privileged --network host alexandreoda/android-studio```
+### DOCKER RUN
+
+```docker run -d --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --network host alexandreoda/android-studio```
+
+### DOCKER COMPOSE
+
+```yml
+version: "3.7"
+
+services:
+  android-studio:
+    container_name: android-studio
+    image: alexandreoda/android-studio
+    privileged: false
+    environment:
+      - DISPLAY
+    network_mode: host
+    volumes:
+      - "${HOME}:/home/android-studio"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+      - "/dev/bus/usb:/dev/bus/usb"
+```
 
 ## LICENSE
 
