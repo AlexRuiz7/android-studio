@@ -1,0 +1,14 @@
+version: "3.7"
+
+services:
+  android-studio:
+    container_name: android-studio
+    image: alexandreoda/android-studio
+    privileged: false
+    environment:
+      - DISPLAY
+    network_mode: host
+    volumes:
+      - "${HOME}:/home/android-studio"
+      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
+      - "/dev/bus/usb:/dev/bus/usb"
