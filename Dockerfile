@@ -15,13 +15,7 @@ RUN echo -e '\033[36;1m ******* INSTALL PACKAGES ******** \033[0m' && \
   libxext6 \
   libxrender1 \
   libxtst6 \
-  lib32stdc++6 \
-  && \
-  echo -e '\033[36;1m ******* CLEANING ******** \033[0m' && \
-  apt-get --purge autoremove -y && \
-  apt-get autoclean -y && \
-  rm /etc/apt/sources.list && \
-  rm -rf /var/cache/apt/archives/* && \
+  lib32stdc++6 && \
   rm -rf /var/lib/apt/lists/*
 
 RUN echo -e '\033[36;1m ******* ADD USER ******** \033[0m' && \
@@ -37,9 +31,9 @@ WORKDIR ${HOME}
 
 RUN echo -e '\033[36;1m ******* INSTALL APP ******** \033[0m' && \
   wget ${APP} -O ${HOME}/android-studio.tar.gz && \
-  sudo apt-get --purge autoremove -y wget && \
   sudo tar zxvf android-studio.tar.gz && \
-  rm -rf android-studio.tar.gz
+  rm -rf android-studio.tar.gz && \
+  sudo apt-get --purge autoremove -y wget
 
 RUN echo -e '\033[36;1m ******* SELECT WORKING SPACE ******** \033[0m'
 WORKDIR ${HOME}/android-studio/bin
