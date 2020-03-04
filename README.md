@@ -25,7 +25,7 @@ Docker image of :
 
 Continuous integration on :
 
-- [gitlab](https://gitlab.com/oda-alexandre/android-studio/pipelines)
+- [gitlab pipelines](https://gitlab.com/oda-alexandre/android-studio/pipelines)
 
 Automatically updated on :
 
@@ -50,6 +50,7 @@ services:
   android-studio:
     container_name: android-studio
     image: alexandreoda/android-studio
+    privileged: false
     environment:
       - DISPLAY
     volumes:
