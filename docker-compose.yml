@@ -4,6 +4,7 @@ services:
   android-studio:
     container_name: android-studio
     image: alexandreoda/android-studio
+    restart: "no"
     privileged: false
     environment:
       - DISPLAY
