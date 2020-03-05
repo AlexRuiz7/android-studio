@@ -41,7 +41,13 @@ Use [docker](https://www.docker.com)
 ### DOCKER RUN
 
 ```\
-docker  run -d --name android-studio -v ${HOME}:/home/android-studio -v /tmp/.X11-unix/:/tmp/.X11-unix/ -v /dev/bus/usb:/dev/bus/usb -e DISPLAY --network host alexandreoda/android-studio
+docker run -d \
+--name android-studio \
+--network host \
+-e DISPLAY \
+-v ${HOME}:/home/android-studio \
+-v /dev/bus/usb:/dev/bus/usb \
+alexandreoda/android-studio
 ```
 
 ### DOCKER COMPOSE
@@ -54,6 +60,7 @@ services:
     container_name: android-studio
     image: alexandreoda/android-studio
     restart: "no"
+    network_mode: host
     privileged: false
     environment:
       - DISPLAY
@@ -61,7 +68,6 @@ services:
       - "${HOME}:/home/android-studio"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
       - "/dev/bus/usb:/dev/bus/usb"
-    network_mode: host
 ```
 
 ## LICENSE
