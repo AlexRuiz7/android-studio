@@ -1,7 +1,5 @@
 FROM openjdk:8-jdk
 
-LABEL authors https://www.oda-alexandre.com
-
 ENV USER android
 ENV HOME /home/${USER}
 ENV APP https://redirector.gvt1.com/edgedl/android/studio/ide-zips/2021.1.1.22/android-studio-2021.1.1.22-linux.tar.gz
