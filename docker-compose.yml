@@ -1,9 +1,9 @@
-version: "2.0"
+version: "3.9"
 
 services:
   android-studio:
+    build: .
     container_name: android-studio
-    image: alexandreoda/android-studio
     restart: "no"
     privileged: false
     environment:
@@ -12,4 +12,5 @@ services:
       - "${HOME}:/home/android-studio"
       - "/tmp/.X11-unix/:/tmp/.X11-unix/"
       - "/dev/bus/usb:/dev/bus/usb"
+      - ${HOME}/AndroidStudioProjects:/home/AndroidStudioProjects
     network_mode: host
