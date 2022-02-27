@@ -41,6 +41,11 @@ docker run -d \
 
 https://github.com/AlexRuiz7/android-studio/blob/33862cd40b3b4c3b736e6a23842092e8c30373a9/docker-compose.yml#L1-L16
 
+```
+docker-compose build
+docker-compose up -d
+```
+
 ## LICENSE
 
 [![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/AlexRuiz7/android-studio/blob/master/LICENSE)
