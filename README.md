@@ -1,38 +1,26 @@
-# ANDROID STUDIO
+# DOCKERIZED ANDROID STUDIO
 
-![logo](https://assets.gitlab-static.net/uploads/-/system/project/avatar/12904438/Android-Studio-3.3-1.png)
+![logo](https://android.tutorials24x7.com/uploads/2021-05-07/banner/0-configure-jdk-java-sdk-path-android-studio-banner.jpg)
 
-- [ANDROID STUDIO](#android-studio)
-  - [INDEX](#index)
-  - [BADGES](#badges)
+- [ANDROID STUDIO ON DOCKER](#dockerized-android-studio)
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
-  - [INSTALL](#install)
+  - [BUILD](#build)
     - [DOCKER RUN](#docker-run)
     - [DOCKER COMPOSE](#docker-compose)
   - [LICENSE](#license)
 
-## BADGES
-
-[![pipeline status](https://gitlab.com/oda-alexandre/android-studio/badges/master/pipeline.svg)](https://gitlab.com/oda-alexandre/android-studio/commits/master)
 
 ## INTRODUCTION
 
-Docker image of :
+- Uses the latest version of Android Studio to date: [Android Studio 2021.1.1.22 'Bumblebee'](https://developer.android.com/studio)
 
-- [android-studio](https://developer.android.com/studio)
-
-Continuous integration on :
-
-- [gitlab pipelines](https://gitlab.com/oda-alexandre/android-studio/pipelines)
-
-Automatically updated on :
-
-- [docker hub public](https://hub.docker.com/r/alexandreoda/android-studio/)
+- Creates a volume on `$HOME/AndroidStudioProjects` to easily share the Android Projects.
 
 ## PREREQUISITES
 
-Use [docker](https://www.docker.com)
+* [Docker](https://www.docker.com)
+* [docker-compose](https://docs.docker.com) (recommended)
 
 ## BUILD
 
@@ -44,30 +32,15 @@ docker run -d \
 --network host \
 -e DISPLAY \
 -v ${HOME}:/home/android-studio \
+-v ${HOME}/AndroidStudioProjects:/home/AndroidStudioProjects \
 -v /dev/bus/usb:/dev/bus/usb \
-alexandreoda/android-studio
+.
 ```
 
 ### DOCKER COMPOSE
 
-```yml
-version: "2.0"
-
-services:
-  android-studio:
-    container_name: android-studio
-    image: alexandreoda/android-studio
-    restart: "no"
-    network_mode: host
-    privileged: false
-    environment:
-      - DISPLAY
-    volumes:
-      - "${HOME}:/home/android-studio"
-      - "/tmp/.X11-unix/:/tmp/.X11-unix/"
-      - "/dev/bus/usb:/dev/bus/usb"
-```
+https://github.com/AlexRuiz7/android-studio/blob/33862cd40b3b4c3b736e6a23842092e8c30373a9/docker-compose.yml#L1-L16
 
 ## LICENSE
 
-[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://gitlab.com/oda-alexandre/android-studio/blob/master/LICENSE)
+[![GPLv3+](http://gplv3.fsf.org/gplv3-127x51.png)](https://github.com/AlexRuiz7/android-studio/blob/master/LICENSE)
