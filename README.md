@@ -1,8 +1,8 @@
-# DOCKERIZED ANDROID STUDIO
+# ANDROID STUDIO ON DOCKER
 
 ![logo](https://android.tutorials24x7.com/uploads/2021-05-07/banner/0-configure-jdk-java-sdk-path-android-studio-banner.jpg)
 
-- [ANDROID STUDIO ON DOCKER](#dockerized-android-studio)
+- [ANDROID STUDIO ON DOCKER](#android-studio-on-docker)
   - [INTRODUCTION](#introduction)
   - [PREREQUISITES](#prerequisites)
   - [BUILD](#build)
